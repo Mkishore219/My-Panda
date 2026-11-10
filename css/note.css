@@ -1,0 +1,48 @@
+:root {
+    --bg: #FFFCFA; --blush: #F8DDE5; --rose: #E9A9BB; --deep: #C96F8A;
+    --cream: #FFF1DF; --choc: #6F4939; --text: #39312F; --muted: #8C7D79;
+    --serif: "Playfair Display", Georgia, serif; --sans: "DM Sans", system-ui, sans-serif; --hand: "Caveat", cursive;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: var(--sans); color: var(--text); line-height: 1.7; overflow-x: hidden;
+    background: radial-gradient(circle at 15% 10%, var(--blush), transparent 45%), radial-gradient(circle at 90% 90%, var(--cream), transparent 50%), var(--bg); }
+.sprite { position: absolute; }
+.hand { font-family: var(--hand); font-weight: 700; color: var(--deep); }
+:focus-visible { outline: 3px solid var(--deep); outline-offset: 3px; border-radius: 10px; }
+
+.bg-deco { position: fixed; color: var(--rose); opacity: .55; animation: float 6s ease-in-out infinite; pointer-events: none; }
+.d1 { top: 8%; left: 7%; font-size: 1.8rem; } .d2 { top: 16%; right: 9%; font-size: 1.4rem; color: #e8b96a; animation-delay: -2s; }
+.d3 { bottom: 12%; left: 10%; font-size: 1.3rem; animation-delay: -1s; } .d4 { bottom: 18%; right: 8%; font-size: 1.6rem; animation-delay: -3s; }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+
+.stage { position: relative; max-width: 760px; margin: 0 auto; padding: 36px 20px 60px; }
+.back { display: inline-block; color: var(--deep); text-decoration: none; margin-bottom: 30px; font-weight: 500; transition: transform .3s ease; }
+.back:hover { transform: translateX(-4px); }
+
+.paper { position: relative; padding: 64px clamp(26px, 7vw, 76px) 56px; border-radius: 6px; transform: rotate(-.8deg);
+    background: #fffdf8 repeating-linear-gradient(transparent 0 35px, rgba(233, 169, 187, .22) 35px 36px);
+    box-shadow: 0 2px 0 #f3e9dc, 0 16px 0 -8px #fbf1e6, 0 26px 40px rgba(111, 73, 57, .16);
+    animation: settle 1s cubic-bezier(.2, .8, .3, 1) both; }
+.paper::before { content: ""; position: absolute; left: clamp(14px, 4vw, 38px); top: 0; bottom: 0; width: 2px; background: rgba(233, 169, 187, .5); }
+@keyframes settle { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: translateY(0) rotate(-.8deg); } }
+
+.tape { position: absolute; top: -14px; width: 96px; height: 28px; background: rgba(233, 169, 187, .6); }
+.t1 { left: 12%; transform: rotate(-6deg); } .t2 { right: 12%; transform: rotate(5deg); background: rgba(255, 241, 223, .9); }
+.corner-panda { position: absolute; right: 22px; top: -34px; width: 84px; height: 84px; transform: rotate(9deg); filter: drop-shadow(0 8px 10px rgba(111, 73, 57, .18)); animation: float 7s ease-in-out infinite; }
+
+.asked { font-family: var(--hand); font-size: 1.7rem; color: var(--deep); font-weight: 700; margin: 0 0 4px; }
+.question { font-family: var(--serif); font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.7rem); line-height: 1.25; color: var(--choc); margin: 0; }
+.divider { display: flex; align-items: center; gap: 14px; margin: 26px 0; color: var(--rose); }
+.divider::before, .divider::after { content: ""; flex: 1; border-top: 2px dotted var(--rose); }
+
+.answer p { font-family: var(--serif); font-size: clamp(1.08rem, 2.4vw, 1.25rem); line-height: 2.05; margin: 0 0 18px; }
+.answer code { font-size: .85em; background: var(--cream); padding: 1px 6px; border-radius: 4px; }
+.sign { margin: 34px 0 0; font-size: 1.9rem; line-height: 1.2; }
+.stamp { position: absolute; right: 28px; bottom: 28px; border: 2px solid var(--deep); border-radius: 8px; padding: 2px 12px; font-size: 1.3rem; transform: rotate(-9deg); opacity: .75; }
+
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 44px; }
+.pg { color: var(--deep); text-decoration: none; padding: 10px 22px; border: 1.5px solid var(--rose); border-radius: 999px; font-weight: 500; background: #fff; transition: background .3s ease, transform .3s ease; }
+.pg:hover { background: var(--blush); transform: translateY(-3px); }
+
+@media (max-width: 575px) { .stamp { position: static; display: inline-block; margin-top: 18px; } .corner-panda { width: 64px; height: 64px; top: -26px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; } }

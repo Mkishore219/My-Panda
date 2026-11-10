@@ -1,0 +1,65 @@
+/* **********************************
+******  CSS MEDIA QUERIES ********* 
+************************************/
+
+/* Extra Large Desktops / 4K Monitors */
+@media (min-width: 1600px) {
+    /* Custom ultra-wide layouts or extra spacing */
+}
+
+
+/* **********************************************************************/
+/* **********************************************************************/
+
+
+
+/* Large Desktops (Bootstrap XL) */
+@media (max-width: 1200px) {
+    /* Adjust spacing, reduce layout columns */
+}
+
+
+/* **********************************************************************/
+/* **********************************************************************/
+
+
+
+/* Medium Devices (Bootstrap LG & MD) */
+@media (max-width: 992px) {
+    /* Adjust font sizes, stack columns */
+}
+
+
+/* **********************************************************************/
+/* **********************************************************************/
+
+
+
+/* Tablets (Bootstrap SM) */
+@media (max-width: 768px) {
+    /* Collapse menus, full-width sections */
+}
+
+
+/* **********************************************************************/
+/* **********************************************************************/
+
+
+
+/* Small Devices (Bootstrap XS) */
+@media (max-width: 576px) {
+    /* Reduce padding, font sizes, optimize for touch */
+}
+
+
+
+/* **********************************************************************/
+/* **********************************************************************/
+
+
+
+
+/* Extra Small / Mobile-first (below Bootstrap XS) */
+@media (max-width: 400px) {
+    /* Tighten UI for small phones (e.g. iPhone SE) */
+}
